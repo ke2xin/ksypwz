@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>开锁测试</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+<button onclick="test()">点我试试</button>
+<script>
+    function test() {
+        console.log($(this));
+        $.ajax({
+            type: 'get',
+            url: 'test.php',
+            dataType: 'text',
+            data: {},
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (e) {
+                console.log("系统错误，请联系管理员！");
+                console.log(e);
+            }
+        });
+    }
+</script>
+</body>
+</html>
